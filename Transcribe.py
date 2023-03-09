@@ -14,9 +14,9 @@ transcribe_client =  boto3.client('transcribe',
 s3_client = boto3.client('s3',
                     aws_access_key_id = 'Write Key_ID',
                     aws_secret_access_key = 'Secerety Key',
-                    region_name ='ap-northeast-1')
+                    region_name ='region')
 translate = boto3.client('translate',
-                        aws_access_key_id = 'AKIAYN5Q22LJ452ELR72',
+                        aws_access_key_id = 'Write Key_ID',
                          aws_secret_access_key = 'Secerety Key',
                          region_name ='mentionregion')
 
@@ -25,8 +25,8 @@ def transcribe_file(job_name, file_uri, transcribe_client):
         TranscriptionJobName=job_name,
         Media={'MediaFileUri': file_uri},
         MediaFormat='mp4',
-        OutputBucketName='damaimlbkt',
-        OutputKey='videos/umesh/outputtext/',
+        OutputBucketName='bucketname',
+        OutputKey='videos/outputtext/',
         LanguageCode='hi-IN'
         )
 
